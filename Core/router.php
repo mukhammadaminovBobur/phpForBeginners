@@ -1,5 +1,5 @@
 <?php
-$routes = require "routes.php";
+$routes = require base_path("routes.php");
 
 
 $uri = $_SERVER['REQUEST_URI'];
@@ -7,6 +7,8 @@ $uri = $_SERVER['REQUEST_URI'];
 
 function routeToController($uri, $routes) {
     $uri = parse_url($uri, PHP_URL_PATH);
+//    dd($uri);
+
     if (array_key_exists($uri, $routes)) {
         require $routes[$uri];
     } else {
