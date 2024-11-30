@@ -1,22 +1,20 @@
 <?php
 $config = require "config.php";
 $db = new Database($config['database']);
+require "Validator.php";
+
 
 $heading = "Notes create";
 
-//if reques is POST dd($_POST);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
     $body = $_POST['body'];
 
-    if (strlen($body) == 0) {
-        $errors['body'] = "Note cannot be empty";
+    if (!Validator::string($body, 1, 1000)){
+        $errors['body'] = "Note no more than 1000 characters required";
     }
 
-    if (strlen($body) > 1000){
-        $errors['body'] = "Note can not be longer than 1000 characters";
-    }
 
     if (empty($errors)){
         $db->query("INSERT INTO notes (body, user_id) VALUES (:body, :user_id)", [

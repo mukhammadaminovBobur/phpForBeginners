@@ -35,7 +35,7 @@
                                     <div class="text-sm font-medium text-gray-900">
                                         <a href="/note?id=<?= $note['id'] ?>"
                                            class="text-indigo-600 hover:text-indigo-900">
-                                            <?= htmlspecialchars($note['body']); ?>
+                                            <?= htmlspecialchars(mb_strimwidth($note['body'], 0, 100, "...")); ?>
                                         </a>
                                     </div>
                                 </div>
