@@ -10,7 +10,7 @@ function routeToController($uri, $routes) {
 //    dd($uri);
 
     if (array_key_exists($uri, $routes)) {
-        require $routes[$uri];
+        require base_path($routes[$uri]);
     } else {
         abort();
     }
