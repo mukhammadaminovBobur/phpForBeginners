@@ -6,7 +6,7 @@
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                 <div class="overflow-hidden bg-white shadow sm:rounded-lg">
                     <div class="px-4 py-5 sm:px-6">
-                        <p class="mt-1 max-w-2xl text-sm text-gray-500"><?= $note['body']; ?></p>
+                        <p class="mt-1 max-w-2xl text-sm text-gray-500"><?= htmlspecialchars($note['body']); ?></p>
                     </div>
                 </div>
                 <div class="flex justify-end my-5">

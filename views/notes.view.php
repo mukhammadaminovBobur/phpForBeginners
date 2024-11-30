@@ -27,8 +27,8 @@
                                     </div>
                                     <div class="ml-4">
                                         <div class="text-sm font-medium text-gray-900">
-                                            <a href="/note?id=<?php echo $note['id'] ?>" class="text-indigo-600 hover:text-indigo-900">
-                                                <?php echo $note['body'] ?>
+                                            <a href="/note?id=<?=$note['id'] ?>" class="text-indigo-600 hover:text-indigo-900">
+                                                <?= htmlspecialchars($note['body']); ?>
                                             </a>
                                         </div>
                                     </div>
