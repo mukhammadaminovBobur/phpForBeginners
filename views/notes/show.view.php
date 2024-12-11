@@ -11,6 +11,7 @@
             </div>
             <div class="flex justify-end my-5">
                 <form method="POST" class="mr-2">
+                    <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="id" value="<?= $note['id']; ?>">
                     <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
                         <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"

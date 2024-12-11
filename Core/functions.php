@@ -20,6 +20,13 @@ function authorize($condition, $status = Response::FORBIDDEN)
     }
 }
 
+function abort($status)
+{
+    http_response_code($status);
+    require base_path("views/{$status}.php");
+    die();
+}
+
 function base_path($path)
 {
     return BASE_PATH . $path;
