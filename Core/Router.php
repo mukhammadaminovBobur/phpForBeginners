@@ -22,26 +22,26 @@ class Router
     }
 
    public function get($uri, $controller) {
-       $this->add('GET', $uri, $controller);
+        $this->add($uri, $controller, 'GET');
    }
 
     public function post($uri, $controller) {
-        $this->add('POST', $uri, $controller);
+        $this->add($uri, $controller, 'POST');
     }
     public function delete($uri, $controller) {
-        $this->add('DELETE', $uri, $controller);
+        $this->add($uri, $controller, 'DELETE');
     }
     public function patch($uri, $controller) {
-        $this->add('PATCH', $uri, $controller);
+        $this->add($uri, $controller, 'PATCH');
     }
     public function put($uri, $controller) {
-        $this->add('PUT', $uri, $controller);
+        $this->add($uri, $controller, 'PUT');
     }
 
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
-            if ($route['uri'] === $uri and $route['method'] === strtoupper($method)) {
+            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
                 return require base_path($route['controller']);
             }
         }

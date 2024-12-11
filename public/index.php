@@ -14,9 +14,10 @@ $router = new Core\Router();
 
 $routes = require base_path("routes.php");
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-//dd($uri);
-$method = $_POST['_method'] ??$_SERVER['REQUEST_METHOD'];
 
+//dd($uri);
+$method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
+//dd($method);
 $router->route($uri, $method);
 
 
