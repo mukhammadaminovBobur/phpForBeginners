@@ -9,11 +9,12 @@
                     <p class="mt-1 max-w-2xl text-sm text-gray-500"><?= htmlspecialchars($note['body']); ?></p>
                 </div>
             </div>
-            <div class="flex justify-end my-5">
+            <div class="flex justify-end my-5 gap-2">
                 <form method="POST" class="mr-2">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="id" value="<?= $note['id']; ?>">
-                    <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                    <button type="submit"
+                            class="inline-flex items-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
                         <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                              fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd"
@@ -23,6 +24,16 @@
                         Delete
                     </button>
                 </form>
+
+                <!-- Edit Button -->
+                <a href="/note/edit?id=<?= $note['id']; ?>"
+                   class="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                         fill="currentColor" aria-hidden="true">
+                        <path d="M4.293 17.293a1 1 0 00-.293.707V20a1 1 0 001 1h2a1 1 0 00.707-.293l10-10-3-3-10 10zM18.707 6.707l-2-2a1 1 0 00-1.414 0l-1.586 1.586 3 3L18.707 8a1 1 0 000-1.414z"/>
+                    </svg>
+                    Edit
+                </a>
 
                 <a href="/notes"
                    class="inline-flex items-center rounded-md border border-transparent bg-gray-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
